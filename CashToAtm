@@ -1,4 +1,4 @@
-class LoadCashToAtm extends MainClass{
+class CashToAtm extends MainClass{
    int countOf2000=0;
    int countOf500=0;
    int countOf100=0;
