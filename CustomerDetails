@@ -1,0 +1,59 @@
+class CustomerDetails extends MainClass{
+	int accNo;
+	String name;
+	int pin;
+	int balance;
+	public CustomerDetails(int accNo, String name, int pin, int balance) {
+		super();
+		this.accNo = accNo;
+		this.name = name;
+		this.pin = pin;
+		this.balance = balance;
+	}
+	public int getAccNo() {
+		return accNo;
+	}
+	public void setAccNo(int accNo) {
+		this.accNo = accNo;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getsPin() {
+		return pin;
+	}
+	public void setsPin(int pin) {
+		this.pin = pin;
+	}
+	public int getBalance() {
+		return balance;
+	}
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+	public void updateBalance(int amt) {
+		balance-=amt;
+		return;
+	}
+	void customerCashUpdate(
+			CustomerDetails obj,int amt,int _2000count,int _500count,int _100count) {
+		if(amt<=obj.balance) {
+    		if(lc.update_Withdrawl(amt,_2000count,_500count,_100count)) {
+    		  obj.updateBalance(amt);
+    		} 
+    		else {
+    			System.out.println("Sorry Atm Balance Is Low");
+    		}
+    	}
+    	else {
+    		System.out.println("Sorry Your Account Balance Is Low");
+    	}
+		return;
+	}
+	public String toString() {
+		return  accNo + name +pin + balance;
+	}	
+}
