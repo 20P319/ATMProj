@@ -1,0 +1,75 @@
+class LoadCashToAtm extends MainClass{
+   int countOf2000=0;
+   int countOf500=0;
+   int countOf100=0;
+   int totalOf2000=0;
+   int totalOf500=0;
+   int totalOf100=0;
+   int atmBalance=0;
+   
+   public int gettotalOf2000() {
+	return totalOf2000;
+}
+public void settotalOf2000(int totalOf2000) {
+	this.totalOf2000 = totalOf2000;
+}
+public int gettotalOf500() {
+	return totalOf500;
+}
+public void settotalOf500(int totalOf500) {
+	this.totalOf500 = totalOf500;
+}
+public int gettotalOf100() {
+	return totalOf100;
+}
+public void settotalOf100(int totalOf100) {
+	this.totalOf100 = totalOf100;
+}
+public int getatmBalance() {
+	return atmBalance;
+}
+public void setatmBalance(int atmBalance) {
+	this.atmBalance = atmBalance;
+}
+public int getcountOf2000() {
+	    return countOf2000;
+   }
+   public void setcountOf2000(int countOf2000) {
+        this.countOf2000 = countOf2000;
+    }
+   public int getcountOf500() {
+	   return countOf500;
+   }
+   public void setcountOf500(int countOf500) {
+	   this.countOf500 = countOf500;
+    }
+   public int getcountOf100() {
+	   return countOf100;
+    }
+   public void setcountOf100(int countOf100) {
+	   this.countOf100 = countOf100;
+   }
+   public void upadate_Cash(int countOf2000, int countOf500, int countOf100) {
+	   this.countOf2000+=countOf2000;
+	   this.countOf500+=countOf500;
+	   this.countOf100+=countOf100;
+	   totalOf2000=countOf2000*2000;
+	   totalOf500=countOf500*500;
+	   totalOf100=countOf100*100;
+       atmBalance=totalOf2000+totalOf500+totalOf100;	   
+       return;
+   }
+   public boolean update_Withdrawl(int amt,int _2000_count,int _500_count,int _100_count) {
+	   if(_2000_count<=countOf2000&&_500_count<=countOf500&&_100_count<=countOf100) {
+		   countOf2000-=_2000_count;
+		   countOf500-=_500_count;
+		   countOf100-=_100_count;
+		   totalOf2000-=_2000_count*2000;
+		   totalOf500-=_500_count*500;
+		   totalOf100-=_100_count*100;
+	       atmBalance-=amt;
+		   return true;
+	   }
+	   return false;
+   }   
+}
