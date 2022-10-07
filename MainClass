@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class MainClass {
 	static ArrayList<CustomerDetails> detail=new ArrayList<>();
 	static Scanner sc=new Scanner(System.in);
-	static LoadCashToAtm lc=new LoadCashToAtm();
+	static CashToAtm lc=new CashToAtm();
 	public static void main(String[] args) {
 		customerDetails();
 		lc.upadate_Cash(20, 100, 100);
@@ -93,4 +93,5 @@ static void ATM_Operation() {
 		System.out.println("---------------------------------------------- ");  
 		System.out.print("\n");
     }
+	
 }
